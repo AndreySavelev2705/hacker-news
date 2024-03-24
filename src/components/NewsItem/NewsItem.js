@@ -1,7 +1,8 @@
 import style from './NewsItem.module.css'
-import {unixToDate} from "../utils/Utils";
-
+import {unixToDate} from "../../utils/Utils";
+import {Link} from 'react-router-dom'
 export function NewsItem(props) {
+    const {className = '', title, username, date, score} = props
     // Вынести бы в отдельную функцию возвращение стиля
     const scoreClassArr = [style.score]
 
@@ -14,17 +15,18 @@ export function NewsItem(props) {
     }
 
     return (
-        <div className={style.container}>
-            <a className={style.link} href="example.com">{props.title}</a>
+        <div className={`${style.container} ${className}`}>
+            <Link className={style.link} to={`comments/${props.id}`}>{title}</Link>
+            {/*<a className={style.link} href="example.com">{title}</a>*/}
 
             <div className={style.info}>
                 <div className={style.userData}>
-                    <span>{props.username} | </span>
-                    <span>{unixToDate(props.date)}</span>
+                    <span>{username} | </span>
+                    <span>{unixToDate(date)}</span>
                 </div>
 
                 <div className={scoreClassArr.join(' ')}>
-                    {props.score} points
+                    {score} points
                 </div>
             </div>
         </div>
