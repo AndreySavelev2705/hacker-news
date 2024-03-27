@@ -1,0 +1,45 @@
+.container {
+    padding: 20px; /* Устанавливает значение полей вокруг содержимого элемента. Полем называется расстояние от внутреннего края рамки элемента до воображаемого прямоугольника, ограничивающего его содержимое */
+    border: 1px solid #808080; /* Толщина, стиль и цвет границы*/
+    border-radius: 10px; /* Сглаживание углов границы элемента */
+    overflow-wrap: break-word; /*Не дает содержимому выходит за рамки блока с комментариями тега*/
+}
+
+.commentContainer:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.commentUsername {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.commentText {
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.commentBottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.commentTime {
+    font-size: 12px;
+    color: #8f8f8f;
+}
+
+.commentReplyButton {
+    background: none;
+    border: none;
+    color: #2b19ff;
+}
+
+.commentReplyButton:hover {
+    color: #1200b6;
+}
+
+.commentSubComment {
+    margin-left: 30px;
+}
